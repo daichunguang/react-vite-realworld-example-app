@@ -8,6 +8,8 @@ function PopularTags({ onTagClick }) {
     if (isFetching) return <p>Loading tags...</p>
     if (isError) return <p>Loading tags failed :(</p>
 
+    if (!data?.tags?.length) return <p>No tags yet</p>
+
     return data.tags.map((tag) => (
       <a
         href="#"
